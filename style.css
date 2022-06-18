@@ -11,6 +11,9 @@ body{
 img{
   width: 100%;
 }
+button{
+  cursor: pointer;
+}
 h1,
 h2{
   font-family: 'Poppins', sans-serif;
@@ -35,7 +38,7 @@ header{
   margin-bottom: 5em;
 }
 .floating-nav .logo{
-  width: 25%;
+  width: min(25%, 125px);
 }
 .floating-nav .top-button{
   background-color: white;
@@ -98,21 +101,28 @@ main{
   bottom: -80px;
   background-color: white;
   width: 90%;
+  max-width: 600px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 20px;
   box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.322);
+  z-index: 10;
 }
 footer{
+  position: relative;
   padding-top: 8em;
   background-color:  hsl(192, 100%, 9%);
   text-align: left;
   padding-inline: 1em;
   padding-bottom: 2em;
 }
+.footer-rows{
+  display: grid;
+  gap: 2em;
+}
 footer > .footer-logo{
   width: 45%;
-  
+  max-width: 250px;
 }
 footer .info{
   display: flex;
@@ -123,7 +133,6 @@ footer .info img{
   width: 20px;
 }
 footer .other-links{
-  margin-block: 2em;
   gap: 1em;
   display: flex;
   flex-direction: column;
@@ -131,6 +140,9 @@ footer .other-links{
 footer .other-links a{
   color: white;
   text-decoration: none;
+}
+footer .other-links:last-child{
+  margin-bottom: 2em;
 }
 footer .social-icons{
   display: flex;
@@ -149,4 +161,48 @@ footer .social-icons a{
   align-items: center;
   border: 1px solid white;
   font-style: normal;
+}
+
+@media screen and (width > 900px) {
+  header{
+    padding-inline: 3em;
+    background-image: url(./images/bg-hero-desktop.svg);
+  }
+  .big-flex{
+    display: flex;
+  }
+  .big-flex .header-content{
+    width: 80%;
+    text-align: left;
+  }
+  .card{
+    flex-direction: row;
+    gap: 7em;
+    text-align: left;
+  }
+  .card:nth-child(2){
+    flex-direction: row-reverse;
+  }
+  .card > *{
+    flex: 1 1 100%
+  }
+  footer .footer-logo{
+    padding-left: 3.8em;
+    margin-bottom: .8em;
+  }
+  .footer-rows{
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    padding-inline: 5em 8em;
+  }
+  .contact-us{
+    width: 30%;
+  }
+  footer > p{
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: .8rem;
+  }
 }
